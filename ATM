@@ -1,0 +1,36 @@
+# A default amount of 500$ is given to every one
+balance=500
+while True:
+    # Displaying the menu for the ATM 
+    print("----------------------------Welcome to the ATM simulation--------------------------------")
+    print("Chose the option you want to execute:")
+    print("To check your balance:              Enter 1")
+    print("To withdraw money:                  Enter 2")
+    print("To deposit money to your account:   Enter 3")
+    print("To exit the ATM:                    Enter 4")
+    # Taking the choice from the user to perform the above functons
+    a=input("Enter your choice:")
+    # Comparing and matching the input by the user to perform the specific tasks
+    if a=="1":
+        print(f"Your current bank balance:{balance}$")
+    elif a=="2":
+        a=int(input("Enter the amount to be withdrawn:"))
+        # If the user tries to withdraw money more than their bank balance displaying "insufficient balance" message
+        if a>balance:
+            print("Insufficient bank balance")
+        elif a<balance:
+            print(f"{a}$ withdrawn sucessfully")
+            # Updating the bank balance after the user withdraws the money
+            balance=balance-a
+    elif a=="3":
+        b=int(input("Enter the amount to be deposited:"))
+        # Updating the bank balance after the user deposits the money
+        balance=balance+b
+        print(f"{b}$ deposited sucessfully")
+    elif a=="4":
+        print("Thankyou for using the ATM Simulation")
+        # When the user wants to exit from the ATM, using break exiting from the loop
+        break
+    else:
+        print("Enter a valid input")
+
